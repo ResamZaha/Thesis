@@ -1,0 +1,12 @@
+[{
+    "$group": {
+    "_id": null,
+    "min_year": { "$min": "$Year" },
+    "min_x_coordinate": { "$min": "$X Coordinate" },
+    "min_y_coordinate": { "$min": "$Y Coordinate" },
+    "earliest_crime_date": { "$min": "$Date" },
+    "min_latitude": { "$min": "$Latitude" },
+    "min_longitude": { "$min": "$Longitude" }
+    }
+}]
+  

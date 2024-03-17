@@ -1,0 +1,6 @@
+[{
+    "$group": {
+        "_id": null,
+        "avg_temperature": { "$avg": "$temp" }
+    }
+}]

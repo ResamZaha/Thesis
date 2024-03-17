@@ -1,0 +1,26 @@
+[{
+    "$group": {
+    "_id": null, 
+    "Total_Observations": { "$sum": 1 },
+    "Mostly_Cloudy_Count": {
+        "$sum": {
+        "$cond": [{ "$eq": ["$wx_phrase", "Mostly Cloudy"] }, 1, 0]
+        }
+    },
+    "Below_Zero_Count": {
+        "$sum": {
+        "$cond": [{ "$lt": ["$temp", 0] }, 1, 0]
+        }
+    },
+    "Windy_Conditions_Count": {
+        "$sum": {
+        "$cond": [{ "$gte": ["$wspd", 10] }, 1, 0]
+        }
+    },
+    "Good_Visibility_Count": {
+        "$sum": {
+        "$cond": [{ "$gt": ["$vis", 10] }, 1, 0]
+        }
+    }
+    }
+}]

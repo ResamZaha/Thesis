@@ -1,0 +1,1 @@
+SELECT MIN(temp) AS min_temperature FROM philly_weather;

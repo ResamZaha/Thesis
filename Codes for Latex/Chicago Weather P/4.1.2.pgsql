@@ -1,0 +1,1 @@
+SELECT * FROM chicago_weather WHERE pressure > 1000.00 AND pressure < 1001.00;

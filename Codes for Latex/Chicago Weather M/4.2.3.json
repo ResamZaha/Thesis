@@ -1,0 +1,8 @@
+[{
+    "$group": {
+    "_id": null,
+    "Min_Wind_Speed": { "$min": "$wspd" },
+    "Min_Visibility": { "$min": "$vis" }
+    }
+}]
+  

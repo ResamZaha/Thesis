@@ -1,0 +1,24 @@
+[{
+    "_id": 0,
+    "Unnamed: 0": 1,
+    "expire_date_time": 1,
+    "expire_time_gmt": 1,
+    "valid_date_time": 1,
+    "valid_time_gmt": 1,
+    "vis": 1,
+    "wx_phrase": 1,
+    "wind_direction": {
+      "$cond": {
+        "if": { "$and": [{ "$gte": ["$wdir", 0] }, { "$lte": ["$wdir", 180] }] },
+        "then": "Easterly Wind",
+        "else": "Westerly Wind"
+      }
+    },
+    "temperature_status": {
+      "$cond": {
+        "if": { "$lt": ["$temp", 0] },
+        "then": "Below freezing",
+        "else": "Above freezing"
+      }
+    }
+}]

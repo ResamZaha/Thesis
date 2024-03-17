@@ -1,0 +1,30 @@
+[{
+    "_id": 0,
+    "Unnamed: 0": 1,
+    "valid_time_gmt": 1,
+    "wdir": 1,
+    "wx_phrase": 1,
+    "valid_date_time": 1,
+    "opposite_wdir": { "$add": ["$wdir", 180] },
+    "reduced_wind_chill": { "$subtract": ["$wc", 5] },
+    "wind_temperature_factor": { "$multiply": ["$temp", "$wspd"] },
+    "comfort_index": { "$divide": [{ "$add": ["$temp", "$wspd"] }, 2] },
+    "comfort_status": {
+      "$switch": {
+        "branches": [
+          { "case": { "$gt": ["$temp", 85] }, "then": "Too Hot" },
+          { "case": { "$lt": ["$temp", 32] }, "then": "Too Cold" }
+        ],
+        "default": "Comfortable"
+      }
+    },
+    "wind_chill_status": {
+      "$switch": {
+        "branches": [
+          { "case": { "$lt": ["$wc", 0] }, "then": "Extreme Cold" },
+          { "case": { "$and": [{ "$gte": ["$wc", 0] }, { "$lte": ["$wc", 32] }] }, "then": "Chilly" }
+        ],
+        "default": "Not Chilly"
+      }
+    }
+}]  

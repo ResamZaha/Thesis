@@ -1,0 +1,1 @@
+SELECT "PdDistrict", COUNT(*) as crime_count FROM sf_crimedata GROUP BY "PdDistrict";

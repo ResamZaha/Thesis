@@ -1,0 +1,6 @@
+[{
+    "$group": {
+            "_id": "$wx_phrase",
+            "Count" : {"$sum" : 1}
+    }
+}]

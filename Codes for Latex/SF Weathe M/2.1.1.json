@@ -1,0 +1,5 @@
+[{
+    "$match": {
+        "wx_phrase": {"$regex": "Rain", "$options": "i"}
+    }
+}]

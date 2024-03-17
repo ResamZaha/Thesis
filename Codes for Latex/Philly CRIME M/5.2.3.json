@@ -1,0 +1,22 @@
+[
+    {
+      "$group": {
+        "_id": null,
+        "earliest_crime_date": { "$min": "$dispatch_date_time" },
+        "min_point_x": { "$min": "$point_x" },
+        "min_point_y": { "$min": "$point_y" },
+        "min_latitude": { "$min": "$lat" },
+        "min_longitude": { "$min": "$lng" }
+      }
+    },
+    {
+      "$project": {
+        "_id": 0,
+        "earliest_crime_date": 1,
+        "min_point_x": 1,
+        "min_point_y": 1,
+        "min_latitude": 1,
+        "min_longitude": 1
+      }
+    }
+  ]

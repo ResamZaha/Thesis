@@ -1,0 +1,1 @@
+SELECT "dc_dist", COUNT(*) as crime_count FROM philly_crime GROUP BY "dc_dist";

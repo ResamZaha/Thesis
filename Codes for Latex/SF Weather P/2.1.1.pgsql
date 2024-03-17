@@ -1,0 +1,1 @@
+SELECT * FROM  sf_weather WHERE wx_phrase ILIKE '%Rain%';

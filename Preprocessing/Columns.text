@@ -1,0 +1,21 @@
+Sf crime 2003 - 2018 = 
+Incident Datetime,Incident Date,Incident Time,Incident Year,
+Incident Day of Week,Report Datetime,Row ID,Incident ID,Incident Number,CAD Number,
+Report Type Code,Report Type Description,Filed Online,Incident Code,Incident Category,
+Incident Subcategory,Incident Description,Resolution,Intersection,CNN,Police District,
+Analysis Neighborhood,Supervisor District,Supervisor District 2012,Latitude,Longitude,
+Point,Neighborhoods,ESNCAG - Boundary File,
+Central Market/Tenderloin Boundary Polygon - Updated,Civic Center Harm Reduction Project Boundary,
+HSOC Zones as of 2018-06-05,Invest In Neighborhoods (IIN) Areas,Current Supervisor Districts,
+Current Police Districts
+
+
+Weather Data SF and chicago columns:
+
+
+,expire_time_gmt,valid_time_gmt,temp,wx_phrase,heat_index,rh,pressure,vis,wc,wdir,wspd,max_temp,min_temp,expire_date_time,valid_date_time
+,expire_time_gmt,valid_time_gmt,temp,wx_phrase,heat_index,rh,pressure,vis,wc,wdir,wspd,max_temp,min_temp,expire_date_time,valid_date_time
+
+
+Chicago crime columns:
+ID,Case Number,Date,Block,IUCR,Primary Type,Description,Location Description,Arrest,Domestic,Beat,District,Ward,Community Area,FBI Code,X Coordinate,Y Coordinate,Year,Updated On,Latitude,Longitude,Location

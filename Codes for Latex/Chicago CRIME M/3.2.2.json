@@ -1,0 +1,11 @@
+[{
+    "$group": {
+    "_id": null,
+    "theft_count": { "$sum": { "$cond": [{ "$eq": ["$Primary Type", "THEFT"] }, 1, 0] } },
+    "robbery_count": { "$sum": { "$cond": [{ "$eq": ["$Primary Type", "ROBBERY"] }, 1, 0] } },
+    "assault_count": { "$sum": { "$cond": [{ "$eq": ["$Primary Type", "ASSAULT"] }, 1, 0] } },
+    "battery_count": { "$sum": { "$cond": [{ "$eq": ["$Primary Type", "BATTERY"] }, 1, 0] } },
+    "criminal_damage_count": { "$sum": { "$cond": [{ "$eq": ["$Primary Type", "CRIMINAL DAMAGE"] }, 1, 0] } }
+    }
+}]
+  

@@ -1,0 +1,31 @@
+[{
+    "_id": 0,
+    "ID": 1,
+    "BeatPlusDistrict": { "$add": ["$Beat", "$District"] },
+    "CoordinateDifference": { "$subtract": ["$X Coordinate", "$Y Coordinate"] },
+    "AreaTimesBeat": { "$multiply": ["$Community Area", "$Beat"] },
+    "BeatPerArea": {
+        "$cond": {
+            "if": {
+                "$or": [
+                    { "$eq": ["$Community Area", 0] },
+                    { "$eq": ["$Community Area", null] }
+                ]
+            },
+            "then": null,
+            "else": {
+                "$divide": [
+                    "$Beat",
+                    {
+                        "$cond": {
+                            "if": { "$eq": ["$Community Area", null] },
+                            "then": 1,
+                            "else": "$Community Area"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "DistrictMinusWard": { "$subtract": ["$District", "$Ward"] }
+}]

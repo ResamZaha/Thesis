@@ -1,0 +1,23 @@
+{
+    "IncidntNum": 1,
+    "Incident Code": 1,
+    "Date": 1,
+    "Time": 1,
+    "is_x_greater_than_y": {
+      "$gt": ["$X", "$Y"]
+    },
+    "is_code_in_range": {
+      "$and": [
+        { "$gte": ["$Incident Code", 20000] },
+        { "$lte": ["$Incident Code", 30000] }
+      ]
+    },
+    "is_on_street": {
+      "$regexMatch": {
+        "input": "$Location",
+        "regex": ".*STREET.*",
+        "options": "i"
+      }
+    }
+}
+  

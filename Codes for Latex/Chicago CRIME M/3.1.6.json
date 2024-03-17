@@ -1,0 +1,23 @@
+[{
+    "$project": {
+        "_id": 0,
+        "ID": 1,
+        "Location Description": 1,
+        "LocationType": {
+            "$switch": {
+                "branches": [
+                    { "case": { "$regexMatch": { "input": "$Location Description", "regex": "school", "options": "i" } }, "then": "School-related" },
+                    { "case": { "$regexMatch": { "input": "$Location Description", "regex": "residence", "options": "i" } }, "then": "Residential" }
+                ],
+                "default": "Other"
+            }
+        },
+        "IsOnStreet": {
+            "$cond": {
+                "if": { "$regexMatch": { "input": "$Location Description", "regex": "street", "options": "i" } },
+                "then": true,
+                "else": false
+            }
+        }
+    }
+}]

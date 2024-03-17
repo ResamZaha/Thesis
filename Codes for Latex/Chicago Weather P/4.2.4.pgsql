@@ -1,0 +1,1 @@
+SELECT MAX(temp) AS max_temperature FROM chicago_weather;

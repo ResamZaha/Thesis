@@ -1,0 +1,1 @@
+SELECT MIN(temp) AS min_temperature FROM sf_weather;

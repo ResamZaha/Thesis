@@ -1,0 +1,26 @@
+[
+    {
+        "$project": {
+            "_id": 0,
+            "objectid": 1,
+            "psa": 1,
+            "CoordinateComparison": {
+                "$cond": {
+                    "if": { "$gt": ["$point_x", "$point_y"] },
+                    "then": "X greater",
+                    "else": "Y greater or equal"
+                }
+            },
+            "UCR_KEYrelation": {
+                "$cond": {
+                    "if": { "$eq": ["$ucr_general", "$dc_key"] },
+                    "then": "Beat greater District",
+                    "else": "Beat less than District"
+                }
+            },
+            "LatGreaterThanLong": { 
+                "$gt": ["$lat", "$lng"] 
+            }
+        }
+    }
+]

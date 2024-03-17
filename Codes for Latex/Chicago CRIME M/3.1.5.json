@@ -1,0 +1,18 @@
+[{
+    "$project": {
+        "_id": 0,
+        "ID": 1,
+        "Community Area": 1,
+        "AreaSize": {
+            "$switch": {
+                "branches": [
+                    { "case": { "$lt": ["$Community Area", 10] }, "then": "Single digit area" },
+                    { "case": { "$and": [{ "$gte": ["$Community Area", 10] }, { "$lte": ["$Community Area", 99] }] }, "then": "Double digit area" },
+                    { "case": { "$gt": ["$Community Area", 99] }, "then": "Triple digit area or unknown" }
+                ],
+                "default": "Triple digit area or unknown"
+            }
+        },
+        "WasThereAnArrest": "$Arrest"
+    }
+}]

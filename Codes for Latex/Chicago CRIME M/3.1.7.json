@@ -1,0 +1,27 @@
+[{
+    "$project": {
+        "_id": 0,
+        "ID": 1,
+        "Latitude": 1,
+        "Longitude": 1,
+        "Region": {
+            "$cond": {
+                "if": {
+                    "$and": [
+                        { "$gte": ["$Latitude", 41.6] },
+                        { "$lte": ["$Latitude", 42] }
+                    ]
+                },
+                "then": "Northern Chicago",
+                "else": "Other"
+            }
+        },
+        "IsSouthOfNorthernChicago": {
+            "$cond": {
+                "if": { "$lt": ["$Latitude", 41.6] },
+                "then": true,
+                "else": false
+            }
+        }
+    }
+}]

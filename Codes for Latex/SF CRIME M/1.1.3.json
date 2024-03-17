@@ -1,0 +1,16 @@
+{
+    "IncidntNum": 1,
+    "Category": 1,
+    "Descript": 1,
+    "DayOfWeek": 1,
+    "PdDistrict": 1,
+    "police_greater_than_supervisor": {
+      "$gt": ["$Current Police Districts 2 2", "$Current Supervisor Districts 2 2"]
+    },
+    "in_neighborhood_94": {
+      "$eq": ["$Neighborhoods 2", 94]
+    },
+    "delete_fields_equal": {
+      "$eq": ["$DELETE - Police Districts 2 2", "$DELETE - Supervisor Districts 2 2"]
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "_id": 0,
+    "ucrGenralPlusDistrict": { "$add": ["$ucr_general", "$dc_dist"] },
+    "CoordinateDifference": { "$subtract": ["$point_x", "$point_y"] },
+    "hourTimesDcKey": { "$multiply": ["$hour", "$dc_key"] },
+    "DistrictMinushour": { "$subtract": ["$dc_dist", "$hour"] }
+}
+  

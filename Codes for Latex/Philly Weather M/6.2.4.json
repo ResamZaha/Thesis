@@ -1,0 +1,13 @@
+[{
+    "$group": {
+    "_id": null,
+    "Max_Temperature": { "$max": "$temp" },
+    "Max_Wind_Speed_Over_10": { "$max": { "$cond": [{ "$gte": ["$wspd", 10] }, "$wspd", null] } },
+    "Max_Heat_Index_Over_90": { "$max": { "$cond": [{ "$gt": ["$heat_index", 90] }, "$heat_index", null] } },
+    "Max_Relative_Humidity_Over_80": { "$max": { "$cond": [{ "$gte": ["$rh", 80] }, "$rh", null] } },
+    "Min_Visibility_Under_2": { "$max": { "$cond": [{ "$lt": ["$vis", 2] }, "$vis", null] } },
+    "Max_Pressure_Over_1020": { "$max": { "$cond": [{ "$gt": ["$pressure", 1020] }, "$pressure", null] } },
+    "Max_Wind_Chill": { "$max": "$wc" }
+    }
+}]
+  

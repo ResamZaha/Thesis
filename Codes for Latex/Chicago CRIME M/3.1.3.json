@@ -1,0 +1,25 @@
+[{
+    "_id": 0,
+    "ID": 1,
+    "CoordinateComparison": {
+        "$cond": {
+            "if": { "$gt": ["$X Coordinate", "$Y Coordinate"] },
+            "then": "X greater",
+            "else": "Y greater or equal"
+        }
+    },
+    "BeatDistrictEquality": {
+        "$cond": {
+            "if": { "$eq": ["$Beat", "$District"] },
+            "then": "Beat equals District",
+            "else": "Beat not equal to District"
+        }
+    },
+    "LatGreaterThanLong": {
+        "$cond": {
+            "if": { "$gt": ["$Latitude", "$Longitude"] },
+            "then": true,
+            "else": false
+        }
+    }
+}]

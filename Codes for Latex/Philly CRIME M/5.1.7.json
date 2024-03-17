@@ -1,0 +1,21 @@
+[{
+    "$project": {
+        "_id": 0,
+        "objectid": 1,
+        "lat": 1,
+        "lng": 1,
+        "psa": 1,
+        "dispatch_date_time": 1,
+        "dc_key": 1,
+        "Region": {
+            "$cond": {
+                "if": { "$and": [{ "$gte": ["$lat", 41.6] }, { "$lte": ["$lat", 42] }] },
+                "then": "Northern philadelphia",
+                "else": "Other"
+            }
+        },
+        "IsSouthOfNorthernPhiladelphia": { 
+            "$lt": ["$lat", 41.6] 
+        }
+    }
+}]

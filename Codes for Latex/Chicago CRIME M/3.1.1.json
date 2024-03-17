@@ -1,0 +1,20 @@
+[{
+    "$match": {
+        "District": {"$gte": 10, "$lte": 2}
+    }
+},
+{
+    "$project": {
+        "ID": 1,
+        "DistrictPlusWard": { "$add": ["$District", "$Ward"] },
+        "CoordinateDifference": { "$subtract": ["$X Coordinate", "$Y Coordinate"] },
+        "ArrestFlag": { "$cond": [{ "$eq": ["$Arrest", true] }, 1, 0] },
+        "AreaTimesBeat": { "$multiply": ["$Community Area", "$Beat"] },
+        "LatMinusLong": { "$subtract": ["$Latitude", "$Longitude"] },
+        "YearLastDigit": { "$mod": ["$Year", 10] },
+        "IsAssault": { "$cond": [{ "$eq": ["$Primary Type", "ASSAULT"] }, 1, 0] }
+    }
+},
+{ 
+    "$sort": { "ID": 1 } 
+}]

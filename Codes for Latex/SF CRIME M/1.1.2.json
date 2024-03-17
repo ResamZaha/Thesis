@@ -1,0 +1,12 @@
+[{
+    "IncidntNum": 1,
+    "Incident Code": 1,
+    "coordinate_difference": { "$subtract": ["$X", "$Y"] },
+    "code_level": {
+      "$cond": {
+        "if": { "$gt": ["$Incident Code", 20000] },
+        "then": "High Code",
+        "else": "Low Code"
+      }
+    }
+}]

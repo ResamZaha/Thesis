@@ -1,0 +1,31 @@
+[{
+    "_id": 0,
+    "wind_chill_effect": {
+      "$cond": [
+        { "$gt": [{ "$subtract": ["$temp", "$wc"] }, 20] },
+        "Significant Wind Chill Effect",
+        "Negligible Wind Chill Effect"
+      ]
+    },
+    "wx_phrase": 1,
+    "valid_date_time": 1,
+    "Unnamed: 0": 1,
+    "valid_time_gmt": 1,
+    "temp": 1,
+    "vis": 1,
+    "realfeel_difference": { "$subtract": ["$temp", "$wc"] },
+    "visibility_status": {
+      "$cond": [
+        { "$lt": ["$vis", 5] },
+        "Low Visibility",
+        {
+          "$cond": [
+            { "$and": [{ "$gte": ["$vis", 5] }, { "$lte": ["$vis", 15] }] },
+            "Moderate Visibility",
+            "High Visibility"
+          ]
+        }
+      ]
+    }
+}]
+  

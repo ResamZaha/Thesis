@@ -1,0 +1,6 @@
+[{
+    "$group": {
+        "_id": null,
+        "max_temperature": { "$max": "$temp" }
+    }
+}]

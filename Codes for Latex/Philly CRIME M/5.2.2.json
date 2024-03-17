@@ -1,0 +1,42 @@
+[
+    {
+      "$group": {
+        "_id": 
+        "homicide_count": {
+          "$sum": {
+            "$cond": [{"$eq": ["$text_general_code", "Homicide - Criminal"]}, 1, 0]
+          }
+        },
+        "other_count": {
+          "$sum": {
+            "$cond": [{"$eq": ["$text_general_code", "All Other Offenses"]}, 1, 0]
+          }
+        },
+        "weapon_related_count": {
+          "$sum": {
+            "$cond": [{"$eq": ["$text_general_code", "Weapon Violations"]}, 1, 0]
+          }
+        },
+        "drunkness_related_count": {
+          "$sum": {
+            "$cond": [{"$eq": ["$text_general_code", "Public Drunkenness"]}, 1, 0]
+          }
+        },
+        "criminal_damage_count": {
+          "$sum": {
+            "$cond": [{"$eq": ["$text_general_code", "VANDALISM"]}, 1, 0]
+          }
+        }
+      }
+    },
+    {
+      "$project": {
+        "_id": 0, 
+        "homicide_count": 1,
+        "other_count": 1,
+        "weapon_related_count": 1,
+        "drunkness_related_count": 1,
+        "criminal_damage_count": 1
+      }
+    }
+  ]

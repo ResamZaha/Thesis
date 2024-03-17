@@ -1,0 +1,26 @@
+[{
+    "valid_date_time": 1,
+    "wx_phrase": 1,
+    "wspd": 1,
+    "wc": 1,
+    "temp": 1,
+    "valid_time_gmt": 1,
+    "Unnamed: 0": 1,
+    "_id": 0,
+    "wind_chill_gap": { "$subtract": ["$temp", "$wc"] },
+    "temperature_comparison": {
+      "$cond": {
+        "if": { "$lt": ["$wc", "$temp"] },
+        "then": "Wind Chill Lower",
+        "else": "Temperature Lower or Equal"
+      }
+    },
+    "wind_speed_status": {
+      "$cond": {
+        "if": { "$gt": ["$wspd", 25] },
+        "then": "High Wind Speed",
+        "else": "Normal Wind Speed"
+      }
+    }
+}]
+  

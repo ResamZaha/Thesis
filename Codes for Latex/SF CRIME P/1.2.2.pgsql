@@ -1,0 +1,1 @@
+SELECT "Category", COUNT(*) as crime_count FROM sf_crimedata GROUP BY "Category";

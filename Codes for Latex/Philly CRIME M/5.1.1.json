@@ -1,0 +1,27 @@
+[
+    {
+      "$match": {
+        "dc_dist": {
+          "$gte": 10,
+          "$lte": 20
+        }
+      }
+    },
+    {
+      "$project": {
+        "objectid": 1,
+        "DistrictPlushour": { "$add": ["$dc_dist", "$hour"] },
+        "CoordinateDifference": { "$subtract": ["$point_x", "$point_y"] },
+        "longitudeTimeslatitude": { "$multiply": ["$lat", "$lng"] },
+        "LatMinusLong": { "$subtract": ["$lat", "$lng"] },
+        "IsTheft": {
+          "$cond": {
+            "if": { "$eq": ["$text_general_code", "Thefts"] },
+            "then": 1,
+            "else": 0
+          }
+        }
+      }
+    }
+]
+  

@@ -1,0 +1,12 @@
+[{
+    "$group": {
+    "_id": null,
+    "Total_Observations": { "$sum": 1 },
+    "High_Heat_Index_Count": { "$sum": { "$cond": [{ "$gt": ["$heat_index", 90] }, 1, 0] } },
+    "High_Humidity_Count": { "$sum": { "$cond": [{ "$gte": ["$rh", 80] }, 1, 0] } },
+    "Low_Visibility_Count": { "$sum": { "$cond": [{ "$lt": ["$vis", 2] }, 1, 0] } },
+    "High_Pressure_Count": { "$sum": { "$cond": [{ "$gt": ["$pressure", 1020] }, 1, 0] } },
+    "Extreme_Wind_Chill_Count": { "$sum": { "$cond": [{ "$lt": ["$wc", -20] }, 1, 0] } }
+    }
+}]
+  

@@ -1,0 +1,23 @@
+[{
+    "$project": {
+        "_id": 0,
+        "objectid": 1,
+        "location_block": 1,
+        "DistSize": {
+            "$switch": {
+                "branches": [
+                    {
+                        "case": { "$lt": ["$dc_dist", 10] },
+                        "then": "Single digit area"
+                    },
+                    {
+                        "case": { "$and": [{ "$gte": ["$dc_dist", 10] }, { "$lte": ["$dc_dist", 99] }] },
+                        "then": "Double digit area"
+                    }
+                ],
+                "default": "Triple digit area or unknown"
+            }
+        },
+        "dispatch_date_time": 1
+    }
+}]

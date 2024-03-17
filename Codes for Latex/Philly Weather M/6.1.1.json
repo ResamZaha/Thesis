@@ -1,0 +1,20 @@
+[{
+    "_id": 0,
+    "Unnamed: 0": 1,
+    "expire_time_gmt": 1,
+    "valid_time_gmt": 1,
+    "temp": 1,
+    "wspd": 1,
+    "wx_phrase": 1,
+    "valid_date_time": 1,
+    "expire_date_time": 1,
+    "temperature_difference": { "$subtract": ["$max_temp", "$min_temp"] },
+    "wind_speed_category": {
+      "$cond": {
+        "if": { "$gt": ["$wspd", 20] },
+        "then": "High wind",
+        "else": "Low wind"
+      }
+    }
+}]
+  

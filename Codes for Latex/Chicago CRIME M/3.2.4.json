@@ -1,0 +1,12 @@
+[{
+    "$group": {
+    "_id": null,
+    "max_year": { "$max": "$Year" },
+    "max_x_coordinate": { "$max": "$X Coordinate" },
+    "max_y_coordinate": { "$max": "$Y Coordinate" },
+    "latest_crime_date": { "$max": "$Date" },
+    "max_latitude": { "$max": "$Latitude" },
+    "max_longitude": { "$max": "$Longitude" }
+    }
+}]
+  

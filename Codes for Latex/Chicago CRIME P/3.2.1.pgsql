@@ -1,0 +1,1 @@
+SELECT "Primary Type", COUNT(*) as crime_count FROM chicago_crime GROUP BY "Primary Type";

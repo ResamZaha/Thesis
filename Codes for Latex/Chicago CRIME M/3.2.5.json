@@ -1,0 +1,28 @@
+[
+  {
+    "$group": {
+      "_id": "$District",
+      "Average_Year": { "$avg": "$Year" },
+      "Avg_X_Coordinate": { "$avg": "$X Coordinate" },
+      "Avg_Y_Coordinate": { "$avg": "$Y Coordinate" },
+      "Avg_Latitude": { "$avg": "$Latitude" },
+      "Avg_Longitude": { "$avg": "$Longitude" }
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "District": "$_id",
+      "Average_Year": 1,
+      "Avg_X_Coordinate": 1,
+      "Avg_Y_Coordinate": 1,
+      "Avg_Latitude": 1,
+      "Avg_Longitude": 1
+    }
+  },
+  {
+    "$sort": {
+      "District": 1
+    }
+  }
+]

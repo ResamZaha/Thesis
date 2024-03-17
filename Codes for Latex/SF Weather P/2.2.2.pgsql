@@ -1,0 +1,1 @@
+SELECT wx_phrase, SUM(1) AS number_of_incidents FROM sf_weather GROUP BY wx_phrase;

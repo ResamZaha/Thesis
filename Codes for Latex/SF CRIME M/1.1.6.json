@@ -1,0 +1,17 @@
+{
+    "IncidntNum": 1,
+    "Address": 1,
+    "X": 1,
+    "Y": 1,
+    "PdDistrict": 1,
+    "Resolution": 1,
+    "city_region": {
+      "$cond": {
+        "if": { "$gt": ["$Y", 37.7749] },
+        "then": "Northern",
+        "else": "Southern"
+      }
+    },
+    "Date": 1
+}
+  

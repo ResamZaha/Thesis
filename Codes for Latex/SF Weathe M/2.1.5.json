@@ -1,0 +1,25 @@
+[{
+    "valid_time_gmt": 1,
+    "Unnamed: 0": 1,
+    "_id": 0,
+    "combined_temperature": { "$add": ["$max_temp", "$min_temp"] },
+    "half_visibility": { "$divide": ["$vis", 2] },
+    "weather_prediction": {
+      "$switch": {
+        "branches": [
+          {
+            "case": { "$and": [{ "$gt": ["$max_temp", 75] }, { "$lt": ["$min_temp", 50] }] },
+            "then": "Wide Temperature Range"
+          },
+          {
+            "case": { "$lt": ["$vis", 5] },
+            "then": "Foggy"
+          }
+        ],
+        "default": "Clear"
+      }
+    },
+    "wx_phrase": 1,
+    "valid_date_time": 1
+}]
+  

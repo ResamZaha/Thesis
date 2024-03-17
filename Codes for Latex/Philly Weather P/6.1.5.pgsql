@@ -1,0 +1,1 @@
+SELECT * FROM  philly_weather WHERE wx_phrase ILIKE '%Rain%';

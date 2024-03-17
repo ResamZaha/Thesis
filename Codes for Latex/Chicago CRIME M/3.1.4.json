@@ -1,0 +1,20 @@
+[
+    {
+      "$match": {
+        "Domestic": true,
+        "Community Area": { "$lt": 10 }
+      }
+    },
+    {
+      "$project": {
+        "_id": 0,
+        "Primary Type": 1,
+        "Description": 1,
+        "Date": 1,
+        "Arrest": 1
+      }
+    },
+    {
+      "$sort": { "Date": -1 }
+    }
+]

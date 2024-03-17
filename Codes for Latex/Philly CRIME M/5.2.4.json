@@ -1,0 +1,23 @@
+[
+    {
+      "$group": {
+        "_id": null,
+        "latest_crime_date": { "$max": "$dispatch_date_time" },
+        "max_point_x": { "$max": "$point_x" },
+        "max_point_y": { "$max": "$point_y" },
+        "max_latitude": { "$max": "$lat" },
+        "max_longitude": { "$max": "$lng" }
+      }
+    },
+    {
+      "$project": {
+        "_id": 0,
+        "latest_crime_date": 1,
+        "max_point_x": 1,
+        "max_point_y": 1,
+        "max_latitude": 1,
+        "max_longitude": 1
+      }
+    }
+  ]
+  

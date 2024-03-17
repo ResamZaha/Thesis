@@ -1,0 +1,49 @@
+Chicago                     SF
+----------------------|--------------
+ID -------------------> PDid
+Case Number ----------> IncidntNum
+Date -----------------> Date + Time
+IUCR -----------------> Incident Code
+Primary Type ---------> Category
+Description ----------> Descript
+Location Description -> Address
+Arrest ---------------> Resolution(Need to be processed)
+District -------------> PdDistrict
+X Coordinate ---------> X
+Y Coordinate ---------> Y
+Year -----------------> From date
+------------------------------------------
+Block ----------------> NA
+Domestic -------------> NA
+FBI Code -------------> NA
+Updated On -----------> NA
+Latitude -------------> NA
+Longitude ------------> NA
+Location -------------> X,Y
+Beat -----------------> SF Find Neighborhoods 2 2 ( It is the smallest police geographic area.)
+Ward -----------------> Current Police Districts 2 2 / Current Supervisor Districts 2 2
+Community Area -------> Current Police Districts 2 2
+=============================================================================
+Chicago
+['BATTERY' 'THEFT' 'NARCOTICS' 'ASSAULT' 'BURGLARY' 'ROBBERY'
+ 'DECEPTIVE PRACTICE' 'OTHER OFFENSE' 'CRIMINAL DAMAGE'
+ 'WEAPONS VIOLATION' 'CRIMINAL TRESPASS' 'MOTOR VEHICLE THEFT'
+ 'SEX OFFENSE' 'INTERFERENCE WITH PUBLIC OFFICER'
+ 'OFFENSE INVOLVING CHILDREN' 'PUBLIC PEACE VIOLATION' 'PROSTITUTION'
+ 'GAMBLING' 'CRIM SEXUAL ASSAULT' 'LIQUOR LAW VIOLATION'
+ 'CRIMINAL SEXUAL ASSAULT' 'ARSON' 'STALKING' 'KIDNAPPING' 'INTIMIDATION'
+ 'CONCEALED CARRY LICENSE VIOLATION' 'NON - CRIMINAL' 'HUMAN TRAFFICKING'
+ 'OBSCENITY' 'PUBLIC INDECENCY' 'OTHER NARCOTIC VIOLATION' 'NON-CRIMINAL'
+ 'HOMICIDE' 'NON-CRIMINAL (SUBJECT SPECIFIED)' 'RITUALISM'
+ 'DOMESTIC VIOLENCE']
+ ============================================================================
+ SF
+ ['ROBBERY' 'VEHICLE THEFT' 'ARSON' 'ASSAULT' 'TRESPASS' 'BURGLARY'
+ 'LARCENY/THEFT' 'WARRANTS' 'OTHER OFFENSES' 'DRUG/NARCOTIC'
+ 'SUSPICIOUS OCC' 'LIQUOR LAWS' 'VANDALISM' 'WEAPON LAWS' 'NON-CRIMINAL'
+ 'MISSING PERSON' 'FRAUD' 'SEX OFFENSES, FORCIBLE' 'SECONDARY CODES'
+ 'DISORDERLY CONDUCT' 'RECOVERED VEHICLE' 'KIDNAPPING'
+ 'FORGERY/COUNTERFEITING' 'PROSTITUTION' 'DRUNKENNESS' 'BAD CHECKS'
+ 'DRIVING UNDER THE INFLUENCE' 'LOITERING' 'STOLEN PROPERTY' 'SUICIDE'
+ 'BRIBERY' 'EXTORTION' 'EMBEZZLEMENT' 'GAMBLING' 'PORNOGRAPHY/OBSCENE MAT'
+ 'SEX OFFENSES, NON FORCIBLE' 'TREA']

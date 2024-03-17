@@ -1,0 +1,22 @@
+[{
+    "valid_time_gmt": 1,
+    "_id": 0,
+    "temp_range": { "$subtract": ["$max_temp", "$min_temp"] },
+    "adjusted_wspd": { "$add": ["$wspd", 10] },
+    "weather_condition": {
+      "$cond": [
+        { "$gt": ["$wspd", 20] },
+        "Windy",
+        {
+          "$cond": [
+            { "$lt": ["$temp", 32] },
+            "Freezing",
+            "Mild"
+          ]
+        }
+      ]
+    },
+    "wx_phrase": 1,
+    "valid_date_time": 1
+}]
+  

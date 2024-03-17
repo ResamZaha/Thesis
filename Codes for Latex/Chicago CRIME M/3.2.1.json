@@ -1,0 +1,6 @@
+[{
+    "$group": {
+            "_id": "$Primary Type",
+            "Case Number per Type" : {"$sum" : 1}
+    }
+}]

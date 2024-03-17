@@ -1,0 +1,1 @@
+SELECT AVG(temp) AS average_temperature FROM sf_weather;

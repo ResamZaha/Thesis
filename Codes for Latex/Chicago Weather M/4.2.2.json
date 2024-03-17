@@ -1,0 +1,15 @@
+[{
+    "$group": {
+    "_id": null,
+    "Total_Wind_Speed": { "$sum": "$wspd" },
+    "Sum_Wind_Speed_Below_Zero": { 
+        "$sum": { 
+        "$cond": [
+            { "$lt": ["$temp", 0] },
+            "$wspd",
+            0
+        ]
+        }
+    }
+    }
+}]
